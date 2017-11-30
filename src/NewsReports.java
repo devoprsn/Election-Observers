@@ -15,14 +15,14 @@ public class NewsReports {
 			states.add(california);
 			states.add(alabama);
 		VotingPolls v=new VotingPolls(states);
-		NBCNews n=new NBCNews();
+		NBC n=new NBC();
 		FoxNews f=new FoxNews();
 		CNN c=new CNN();
 			v.addObserver(n);
 			v.addObserver(f);
 			v.addObserver(c);
 			
-		ohio.setDemocraticVotes(5);
-		v.setVotes(ohio);
+		ohio.addDemocraticVotes(5);
+		v.addVotes(ohio);
 	}
 }

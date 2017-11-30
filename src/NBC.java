@@ -1,14 +1,14 @@
-import java.util.Observable;
-import java.util.Observer;
 
-public class CNN extends VotingNews implements Observer{
+import java.util.*;
+
+public class NBC extends VotingNews implements Observer{
 	private String name;
-	public CNN() 
+	public NBC() 
 	{
-		super(new DemocraticPopularVoteStrategy(), new RepublicanElectoralStrategy1());
-		name="CNN";
+		super(new RepublicanPopularVoteStrategy(), new HonestElectoralVoteStrategy());
+		name="NBC";
 	}
-
+	
 	@Override
 	public void update(Observable obs, Object obj) 
 	{

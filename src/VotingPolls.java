@@ -24,7 +24,7 @@ public class VotingPolls extends Observable{
 		
 	}
 	
-	public void setVotes(State state)
+	public void addVotes(State state)
 	{
 		for(State s: states)
 		{

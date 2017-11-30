@@ -18,9 +18,9 @@ public class State {
 		return democraticVotes;
 	}
 	
-	public void setDemocraticVotes(int democraticVotes) 
+	public void addDemocraticVotes(int votes)
 	{
-		this.democraticVotes = democraticVotes;
+		democraticVotes+=votes;
 	}
 	
 	public int getRepublicanVotes() 
@@ -28,9 +28,9 @@ public class State {
 		return republicanVotes;
 	}
 	
-	public void setRepublicanVotes(int republicanVotes)
+	public void addRepublicanVotes(int votes)
 	{
-		this.republicanVotes = republicanVotes;
+		republicanVotes+=votes;
 	}
 	
 	public int getElectoralVote() 

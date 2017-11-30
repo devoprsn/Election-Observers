@@ -1,11 +1,11 @@
-
 import java.util.*;
 
 public class FoxNews extends VotingNews implements Observer{
-
+	private String name;
 	public FoxNews() 
 	{
 		super(new HonestPopularVoteStrategy(), new HonestElectoralVoteStrategy());
+		name="FoxNews";
 	}
 
 	@Override
@@ -22,8 +22,9 @@ public class FoxNews extends VotingNews implements Observer{
 	
 	public void displayResults(String str1, String str2)
 	{
+		System.out.println(name);
 		System.out.println(str1);
 		System.out.println(str2);
-		System.out.println(getLegalMessage());
+		System.out.println(getLegalMessage()+"\n");
 	}
 }

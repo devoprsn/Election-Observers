@@ -19,6 +19,7 @@ public class RepublicanElectoralStrategy1 implements IElectoral{
 			{
 				dem=state.getElectoralVote()/2;
 				rep=state.getElectoralVote()/2;
+				//if odd?
 			}
 		}
 		return "";

@@ -1,13 +1,14 @@
+import java.util.Observable;
+import java.util.Observer;
 
-import java.util.*;
-
-public class NBCNews extends VotingNews implements Observer{
-
-	public NBCNews() 
+public class News12 extends VotingNews implements Observer {
+	private String name;
+	public News12() 
 	{
-		super(new RepublicanPopularVoteStrategy(), new HonestElectoralVoteStrategy());
+		super(new RepublicanPopularVoteStrategy(), new RepublicanElectoralStrategy1());	
+		name="News12";
 	}
-	
+
 	@Override
 	public void update(Observable obs, Object obj) 
 	{
@@ -22,8 +23,9 @@ public class NBCNews extends VotingNews implements Observer{
 	
 	public void displayResults(String str1, String str2)
 	{
+		System.out.println(name);
 		System.out.println(str1);
 		System.out.println(str2);
-		System.out.println(getLegalMessage());
+		System.out.println(getLegalMessage()+"\n");
 	}
 }
