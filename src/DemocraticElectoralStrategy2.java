@@ -13,7 +13,10 @@ public class DemocraticElectoralStrategy2 implements IElectoral{
 			rep-=(rep*.02);
 			dem=state.getDemocraticVotes();
 			dem+=(rep*.02);
-			if(dem>rep)
+			if(rep==0 && dem==0)
+			{			
+			}
+			else if(dem>rep)
 			{
 				demElectoral+=state.getElectoralVote();
 			}
@@ -23,11 +26,21 @@ public class DemocraticElectoralStrategy2 implements IElectoral{
 			}
 			else 
 			{
-				demElectoral=state.getElectoralVote()/2;
-				repElectoral=state.getElectoralVote()/2;
+				demElectoral+=state.getElectoralVote()/2;
+				repElectoral+=state.getElectoralVote()/2;
 			}
 		}
-		return "";
+
+		StringBuilder result=new StringBuilder("Electoral vote- ");
+		if(repElectoral>demElectoral)
+			result.append("Republican candidate in the lead.\n");
+		else if(demElectoral>repElectoral)
+			result.append("Democratic candidate in the lead.\n");
+		else
+			result.append("Both candidates tied.\n");
+		
+		result.append("Total Republican votes: "+repElectoral+", Total Democratic votes: "+demElectoral);
+		return result.toString();
 	}
 
 

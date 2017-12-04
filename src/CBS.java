@@ -5,7 +5,7 @@ public class CBS extends VotingNews implements Observer{
 	private String name;
 	public CBS() 
 	{
-		super(new DemocraticPopularVoteStrategy(), new DemocraticElectoralStrategy1());
+		super(new DemocraticPopularVoteStrategy(), new DemocraticElectoralStrategy2());
 		name="CBS";
 	}
 

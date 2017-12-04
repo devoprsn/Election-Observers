@@ -8,11 +8,11 @@ public class VotingPolls extends Observable{
 		public ArrayList<State> states;
 		public VotingStats(ArrayList<State> states)
 		{
-			 this.states=states; //shallow?
-		}
-		public ArrayList<State> getStates()
-		{
-			return states;
+			this.states=new ArrayList<State>(states.size());
+			for(State state:states)
+			{
+				this.states.add(state); 
+			}
 		}
 	}
 
@@ -20,24 +20,22 @@ public class VotingPolls extends Observable{
 	
 	public VotingPolls(ArrayList<State> states) 
 	{
-		this.states=states;
-		
+		this.states=states;	
 	}
 	
-	public void addVotes(State state)
+	public void addVotes(String state, int repVotes, int demVotes)
 	{
 		for(State s: states)
 		{
-			if(state.getName().equals(s.getName()))
+			if(s.getName().equalsIgnoreCase(state))
 			{
-				s.setDemocraticVotes(state.getDemocraticVotes());
-				s.setRepublicanVotes(state.getRepublicanVotes());
+				s.addRepublicanVotes(repVotes);
+				s.addDemocraticVotes(demVotes);
+				break;
 			}
 		}
 		votesChanged();
 	}
-	
-//	public void setAllVotes(ArrayList<State> states)
 	
 	public void votesChanged()
 	{

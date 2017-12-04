@@ -5,7 +5,7 @@ public class NBC extends VotingNews implements Observer{
 	private String name;
 	public NBC() 
 	{
-		super(new RepublicanPopularVoteStrategy(), new HonestElectoralVoteStrategy());
+		super(new DemocraticPopularVoteStrategy(), new HonestElectoralVoteStrategy());
 		name="NBC";
 	}
 	

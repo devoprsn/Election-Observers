@@ -11,7 +11,15 @@ public class State {
 		this.name=name;
 		this.electoralVotes=electoralVotes;	
 	}
-
+	
+	//copy constructor
+	public State(State state)
+	{
+		this.name=state.name;
+		this.democraticVotes=state.democraticVotes;
+		this.republicanVotes=state.republicanVotes;
+		this.electoralVotes=state.electoralVotes;
+	}
 
 	public int getDemocraticVotes() 
 	{

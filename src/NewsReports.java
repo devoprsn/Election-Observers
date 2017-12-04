@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class NewsReports {
@@ -18,11 +21,17 @@ public class NewsReports {
 		NBC n=new NBC();
 		FoxNews f=new FoxNews();
 		CNN c=new CNN();
+		CBS cb=new CBS();
+		News12 ne=new News12();
 			v.addObserver(n);
 			v.addObserver(f);
 			v.addObserver(c);
+			v.addObserver(cb);
+			v.addObserver(ne);
 			
-		ohio.addDemocraticVotes(5);
-		v.addVotes(ohio);
+		v.addVotes("alabama", 35, 37);
+		v.addVotes("new york", 28, 65);
+		v.addVotes("utah", 74, 40);
+		v.addVotes("ohio", 50, 50);
 	}
 }

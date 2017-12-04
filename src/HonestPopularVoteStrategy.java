@@ -11,6 +11,15 @@ public class HonestPopularVoteStrategy implements IPopularVote{
 			dem+=state.getDemocraticVotes();
 		}
 		
-		return "";
+		StringBuilder result=new StringBuilder("Popular vote- ");
+		if(rep>dem)
+			result.append("Republican candidate in the lead.\n");
+		else if(dem>rep)
+			result.append("Democratic candidate in the lead.\n");
+		else
+			result.append("Both candidates tied.\n");
+		
+		result.append("Total Republican votes: "+rep+", Total Democratic votes: "+dem);
+		return result.toString();
 	}
 }
