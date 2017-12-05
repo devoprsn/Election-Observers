@@ -1,9 +1,7 @@
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class NewsReports {
+//main class
 	public static void main(String[] args)
 	{
 		ArrayList<State> states=new ArrayList<State>();
@@ -29,9 +27,11 @@ public class NewsReports {
 			v.addObserver(cb);
 			v.addObserver(ne);
 			
-		v.addVotes("alabama", 35, 37);
-		v.addVotes("new york", 28, 65);
-		v.addVotes("utah", 74, 40);
-		v.addVotes("ohio", 50, 50);
+		System.out.println("Adding votes to Alabama: ");
+		v.addVotes("alabama", 350, 373);
+		System.out.println("Adding votes to New York: ");
+		v.addVotes("new york", 287, 554);
+		System.out.println("Adding votes to Ohio: ");
+		v.addVotes("ohio", 500, 321);
 	}
 }
